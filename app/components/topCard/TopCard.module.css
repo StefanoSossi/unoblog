@@ -1,0 +1,36 @@
+.image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: var(--translateXPosition) center;
+}
+
+.imageContainer {
+	width: 40vmin;
+	height: 56vmin;
+	position: relative;
+}
+
+.card {
+	width: 40vmin;
+	height: 56vmin;
+}
+.author {
+	opacity: 0;
+	transition: 0.5s;
+	font-size: 20px;
+	font-weight: 900;
+	padding: 60px 40px 0;
+	top: 40vmin;
+	color: #ffffff;
+	position: absolute;
+	width: 40vmin;
+}
+
+.card:hover .author {
+	opacity: 1;
+}
+
+.card:hover .image {
+	opacity: 70%;
+}

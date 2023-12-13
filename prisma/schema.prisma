@@ -90,3 +90,34 @@ model Comment {
   postSlug  String
   post      Post     @relation(fields: [postSlug], references: [slug])
 }
+
+/////////////// Spotify
+
+model Artist {
+  id             String  @id @default(cuid()) @map("_id")
+  slug           String  @unique
+  profileName    String
+  avatarImageurl String
+  Album          Album[]
+}
+
+model Album {
+  id          String  @id @default(cuid()) @map("_id")
+  slug        String  @unique
+  name        String
+  coverArtUrl String
+  dateYear    Int
+  artistslug  String
+  artist      Artist  @relation(fields: [artistslug], references: [slug])
+  Track       Track[]
+}
+
+model Track {
+  id                        String @id @default(cuid()) @map("_id")
+  slug                      String @unique
+  name                      String
+  durationTotalMilliseconds Int
+  albumslug                 String
+  trackImageUrl             String
+  album                     Album  @relation(fields: [albumslug], references: [slug])
+}
