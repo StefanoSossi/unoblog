@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import AuthLinks from "../auth-links/AuthLinks";
 import Toggle from "../toggle/Toggle";
-
 import styles from "./Navbar.module.css";
 import { menues } from "@/lib/placeholder-data";
 import { Menu } from "@/lib/definitions";
