@@ -23,3 +23,12 @@ export type queryProps = {
 	query: string;
 	limit: number;
 };
+
+export type TracksData = {
+	id: string;
+	uri: string;
+	name: string;
+	durationTotalMilliseconds: number;
+	albumUri: string;
+	trackImageUrl: string;
+};

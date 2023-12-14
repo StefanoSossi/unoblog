@@ -2,7 +2,7 @@
 	display: flex;
 	gap: 4vmin;
 	position: absolute;
-	left: 10%;
+	left: 35%;
 	top: 50%;
 	transform: translate(var(--translateX), -50%);
 }

@@ -1,13 +1,7 @@
-import SearchBar from "@/app/components/searchBar/SearchBar";
-import CardCarrousel from "../../components/cardCarrousel/CardCarrousel";
-import styles from "./Entertaining.module.css";
-import { menues } from "@/lib/placeholder-data";
-import { getRecomendations } from "@/lib/spotifyData";
 import Search from "@/app/components/search/Search";
 
-const Entertaining = async ({ params }: any) => {
-	const menu = menues.find((menu) => menu.id === params.id);
-	let top5Recommended = [
+describe("toggle tests", () => {
+	const top5Recommended = [
 		{
 			id: "1",
 			uri: "spotify:track:2z75GXka50vxEA2EgegDFu",
@@ -54,18 +48,11 @@ const Entertaining = async ({ params }: any) => {
 				"https://i.scdn.co/image/ab67616d0000b273cae9083ccaabca190d540916",
 		},
 	];
-	/*const recomendedTracks = await getRecomendations();
-	top5Recommended = recomendedTracks.slice(0, 5);*/
+	it("has light mode by default", () => {
+		cy.mount(<Search recomendedTracks={top5Recommended}></Search>);
 
-	return (
-		<>
-			<div className={styles.container}>
-				<h1 className={styles.header}>Top 5 {menu?.title} this week</h1>
-				<CardCarrousel recomendedTracks={top5Recommended}></CardCarrousel>
-			</div>
-			<Search recomendedTracks={top5Recommended}></Search>
-		</>
-	);
-};
-
-export default Entertaining;
+		cy.get('[data-testId="searchInput"]').type("Bossman");
+		cy.get('[data-testid="searchselectoption"]').find("ul > li").click();
+		cy.get('[data-testId="searchselecttitle"]').contains("Bossman");
+	});
+});

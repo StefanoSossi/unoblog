@@ -31,7 +31,7 @@ const Navbar = () => {
 						</Link>
 					);
 				})}
-				<Link href="/about" className={styles.link}>
+				<Link href="/about" className={styles.link} data-testid="aboutLink">
 					About
 				</Link>
 				<Link href="/contact" className={styles.link}>
