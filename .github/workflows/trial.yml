@@ -13,10 +13,11 @@ jobs:
         uses: actions/checkout@v3
 
       - run: npm ci
-      - run: echo "I'm alive"
+      - run: echo "I'm alive thanks"
 
   cypress-run:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
